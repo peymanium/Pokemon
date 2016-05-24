@@ -13,19 +13,25 @@ class PokemonCell: UICollectionViewCell
     @IBOutlet weak var LBL_Name : UILabel!
     @IBOutlet weak var IMG : UIImageView!
     
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+        
+        self.layer.cornerRadius = 5
+    }
+    override init(frame: CGRect)
+    {
+        super.init(frame: frame)
+    }
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+    }
     
     func ConfigureCell(pokemon : Pokemon)
     {
         self.LBL_Name.text = pokemon.pokemonName
         self.IMG.image = UIImage(named: "\(pokemon.pokemonID)")
-    }
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
     }
     
 }

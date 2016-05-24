@@ -13,11 +13,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView : UICollectionView!
     
+    var pokemonArray = [Pokemon]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        
+        pokemonArray = Functions.instance.ParseCSV()
     }
     
     
@@ -26,13 +30,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return 1
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return pokemonArray.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         if let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier("CellID", forIndexPath: indexPath) as? PokemonCell
         {
-            let pokemon = Pokemon(name: "Charzaar", id: indexPath.row)
+            let pokemon = pokemonArray[indexPath.row]
             cell.ConfigureCell(pokemon)
             
             return cell
