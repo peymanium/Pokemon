@@ -13,6 +13,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     @IBOutlet weak var collectionView : UICollectionView!
     
+    @IBOutlet weak var BTN_Music: UIButton!
     var pokemonArray = [Pokemon]()
     
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
+        Functions.instance.InitMusic()
         pokemonArray = Functions.instance.ParseCSV()
     }
     
@@ -54,6 +56,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSizeMake(100, 100)
     }
     
+    
+    @IBAction func BTN_Music_Tapped(sender: AnyObject)
+    {
+        if Functions.instance.musicPlayer.playing
+        {
+            Functions.instance.musicPlayer.stop()
+            self.BTN_Music.alpha = 0.4
+        }
+        else
+        {
+            Functions.instance.musicPlayer.play()
+            self.BTN_Music.alpha = 1
+        }
+    }
     
 
 }

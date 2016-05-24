@@ -7,11 +7,13 @@
 //
 
 import Foundation
-
+import AVFoundation
 
 class Functions
 {
     static let instance = Functions()
+    
+    var musicPlayer : AVAudioPlayer!
     
     
     func ParseCSV() -> [Pokemon]
@@ -42,5 +44,22 @@ class Functions
         
         return result
     }
+    
+    func InitMusic()
+    {
+        let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!
+        
+        do{
+            musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path)!)
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.prepareToPlay()
+            musicPlayer.play()
+        }
+        catch let error as NSError
+        {
+            print (error.debugDescription)
+        }
+    }
+
     
 }
