@@ -139,6 +139,7 @@
                     <connections>
                         <outlet property="BTN_Music" destination="BPH-Uq-FCg" id="1Pn-AZ-8Jk"/>
                         <outlet property="collectionView" destination="KTo-dA-hRx" id="WeC-Pu-Byq"/>
+                        <outlet property="searchBar" destination="0hK-yG-rzF" id="RQJ-JP-v9X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
