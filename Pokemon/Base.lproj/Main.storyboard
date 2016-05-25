@@ -140,11 +140,56 @@
                         <outlet property="BTN_Music" destination="BPH-Uq-FCg" id="1Pn-AZ-8Jk"/>
                         <outlet property="collectionView" destination="KTo-dA-hRx" id="WeC-Pu-Byq"/>
                         <outlet property="searchBar" destination="0hK-yG-rzF" id="RQJ-JP-v9X"/>
+                        <segue destination="odI-Ib-sdY" kind="show" identifier="Segue_PokemonDetails" id="y1I-gy-gIR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245" y="303"/>
+        </scene>
+        <!--Pokemon Details View Controller-->
+        <scene sceneID="nCu-16-qVU">
+            <objects>
+                <viewController id="odI-Ib-sdY" customClass="PokemonDetailsViewController" customModule="Pokemon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9rj-3w-cft"/>
+                        <viewControllerLayoutGuide type="bottom" id="8CA-hR-zyX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jxe-ZC-1gW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpI-Pv-gyv">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6DT-gw-Twf"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfS-kc-ifG">
+                                <rect key="frame" x="168" y="96" width="265" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="Gt0-GQ-xIR"/>
+                                    <constraint firstAttribute="height" constant="37" id="IZ3-Ma-EWp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XfS-kc-ifG" firstAttribute="centerX" secondItem="Jxe-ZC-1gW" secondAttribute="centerX" id="3k1-tz-MRj"/>
+                            <constraint firstItem="XfS-kc-ifG" firstAttribute="top" secondItem="xpI-Pv-gyv" secondAttribute="bottom" constant="36" id="epY-bV-EUY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="LBL_Name" destination="XfS-kc-ifG" id="dYt-wX-jJf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIx-Ha-dKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939" y="303"/>
         </scene>
     </scenes>
     <resources>

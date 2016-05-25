@@ -27,7 +27,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.collectionView.dataSource = self
         self.searchBar.delegate = self
         
-        self.searchBar.returnKeyType = .Done
+        self.searchBar.returnKeyType = .Done //change the button to Done
         
         Functions.instance.InitMusic()
         pokemonArray = Functions.instance.ParseCSV()
@@ -75,12 +75,38 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
+        var pokemon : Pokemon!
+        if isSearchMode
+        {
+            pokemon = pokemonSearch[indexPath.row]
+        }
+        else
+        {
+            pokemon = pokemonArray[indexPath.row]
+        }
         
+        performSegueWithIdentifier("Segue_PokemonDetails", sender: pokemon)
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
         return CGSizeMake(100, 100)
     }
+    
+    
+    //Segue function
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Segue_PokemonDetails"
+        {
+            if let pokemonDetailsViewController = segue.destinationViewController as? PokemonDetailsViewController
+            {
+                if let pokemon = sender as? Pokemon
+                {
+                    pokemonDetailsViewController.pokemonDetails = pokemon
+                }
+            }
+        }
+    }
+    
     
     
     //Search bar delegate
@@ -94,16 +120,18 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         if self.searchBar.text == nil || self.searchBar.text == ""
         {
             self.isSearchMode = false
-            view.endEditing(true)
+            view.endEditing(true) //to hide the keyboard if there is nothing in the search bar
         }
         else
         {
             self.isSearchMode = true
+            //start filtering based on the search
             let lowerSearchString = self.searchBar.text!.lowercaseString
             pokemonSearch = pokemonArray.filter({$0.pokemonName.rangeOfString(lowerSearchString) != nil})
         }
         self.collectionView.reloadData()
     }
+    
     
     //Music button
     @IBAction func BTN_Music_Tapped(sender: AnyObject)

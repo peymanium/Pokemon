@@ -19,6 +19,7 @@
 		5D8845E11CF4B36A00F0376B /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5D8845E01CF4B36A00F0376B /* pokemon.csv */; };
 		5D8845E31CF4B75D00F0376B /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5D8845E21CF4B75D00F0376B /* music.mp3 */; };
 		5D8845E51CF4B76600F0376B /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D8845E41CF4B76600F0376B /* pokemon.ttf */; };
+		5DF7C7541CF5C97E0087057B /* PokemonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF7C7531CF5C97E0087057B /* PokemonDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5D8845E01CF4B36A00F0376B /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		5D8845E21CF4B75D00F0376B /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		5D8845E41CF4B76600F0376B /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
+		5DF7C7531CF5C97E0087057B /* PokemonDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				5D8845DA1CF395B300F0376B /* CocoaTouch */,
 				5D8845C11CF38FB600F0376B /* ViewController.swift */,
+				5DF7C7531CF5C97E0087057B /* PokemonDetailsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				5D8845D91CF3945900F0376B /* PokemonCell.swift in Sources */,
 				5D8845C01CF38FB600F0376B /* AppDelegate.swift in Sources */,
 				5D8845D51CF3934F00F0376B /* Pokemon.swift in Sources */,
+				5DF7C7541CF5C97E0087057B /* PokemonDetailsViewController.swift in Sources */,
 				5D8845DC1CF4AC8D00F0376B /* csv.swift in Sources */,
 				5D8845DF1CF4B12700F0376B /* Functions.swift in Sources */,
 			);
@@ -363,6 +367,7 @@
 				5D8845D01CF38FB600F0376B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
