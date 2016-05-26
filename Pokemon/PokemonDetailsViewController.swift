@@ -19,11 +19,6 @@ class PokemonDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         self.LBL_Name.text = pokemonDetails.pokemonName
-    
-        for index in 1...10
-        {
-            print ("\(index)")
-        }
     }
 
 }
